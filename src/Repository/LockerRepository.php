@@ -1,8 +1,11 @@
 <?php
+
 namespace App\Repository;
+
 use App\Entity\Locker;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+
 /**
  * @method Locker|null find($id, $lockMode = null, $lockVersion = null)
  * @method Locker|null findOneBy(array $criteria, array $orderBy = null)
@@ -15,6 +18,7 @@ class LockerRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Locker::class);
     }
+
     /*
     public function findBySomething($value)
     {

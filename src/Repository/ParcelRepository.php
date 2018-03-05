@@ -1,8 +1,11 @@
 <?php
+
 namespace App\Repository;
+
 use App\Entity\Parcel;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+
 /**
  * @method Parcel|null find($id, $lockMode = null, $lockVersion = null)
  * @method Parcel|null findOneBy(array $criteria, array $orderBy = null)
@@ -15,6 +18,7 @@ class ParcelRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Parcel::class);
     }
+
     /*
     public function findBySomething($value)
     {

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List of all Amazon Lockers Kiosks{% endblock %}
+
+{% block body %}
+
+    <h1>List of kiosks</h1>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th colspan="2">Lockers</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th colspan="4">
+                    Amazon Lockers are available in {{ kiosks|length }} cities of France.
+                </th>
+            </tr>
+        </tfoot>
+        <tbody>
+            {% for kiosk in kiosks %}
+                <tr>
+                    <td>{{ kiosk.name }}</td>
+                    <td>{{ kiosk.cityName }} ({{ kiosk.zipCode }})</td>
+                    <td class="lockers-available">
+                        {{- kiosk.numberOfAvailableLockers -}}
+                    </td>
+                    <td class="lockers-occupied">
+                        {{- kiosk.numberOfOccupiedLockers -}}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

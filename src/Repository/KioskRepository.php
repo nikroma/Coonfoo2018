@@ -1,8 +1,11 @@
 <?php
+
 namespace App\Repository;
+
 use App\Entity\Kiosk;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+
 /**
  * @method Kiosk|null find($id, $lockMode = null, $lockVersion = null)
  * @method Kiosk|null findOneBy(array $criteria, array $orderBy = null)
@@ -15,16 +18,17 @@ class KioskRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Kiosk::class);
     }
-    /*
-    public function findBySomething($value)
+
+    /**
+     * @return Kiosk[]
+     */
+    public function findAllForHomepage(): array
     {
-        return $this->createQueryBuilder('k')
-            ->where('k.something = :value')->setParameter('value', $value)
-            ->orderBy('k.id', 'ASC')
-            ->setMaxResults(10)
+        return $this
+            ->createQueryBuilder('k')
+            ->orderBy('k.slug', 'ASC')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 }
