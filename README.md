@@ -1,20 +1,29 @@
-# Coonfoo2018
+README
+======
+
 Git Repository
-https://github.com/hhamon/yul2018.confoo.dev
-#
-MyCopy
-https://github.com/nikroma/Coonfoo2018.git
+--------------
 
-#Installation
+    https://github.com/hhamon/yul2018.confoo.dev
+    https://github.com/nikroma/Coonfoo2018.git
+
+Installation
+------------
+
 Useful Commands
-# Create database
-$ bin/console doctrine:database:create
+---------------
 
-# Update database schema
-$ bin/console doctrine:schema:update --force
+    # Create database
+    $ bin/console doctrine:database:create
 
-# Generate a migration diff
-$ bin/console doctrine:migration:diff
+    # Update database schema
+    $ bin/console doctrine:schema:update --force
 
-# Run a migration script
-$ bin/console doctrine:migration:migrate
+    # Generate a migration diff
+    $ bin/console doctrine:migration:diff
+
+    # Run a migration script
+    $ bin/console doctrine:migration:migrate
+
+    # Load data fixtures
+    $ bin/console doctrine:fixtures:load
